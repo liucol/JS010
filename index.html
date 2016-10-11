@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			window.onload=function(){
+				var oTxt1=document.getElementById('txt1');
+				var oTxt2=document.getElementById('txt2');
+				var oTxt3=document.getElementById('txt3');
+				var oBtn1=document.getElementById('btn1');
+				
+				oBtn1.onclick=function(){
+					/*var re1=/<[^<>]+>||<^[\u4e00-\u9fa5]+>/g;
+					var re2=/<[^<>]+>/g;*/
+					var re=/<[^<>]+>/g;
+					oTxt2.value=oTxt1.value.replace(re,'');
+					//当练习时转换一次没成功，想出来的再次过滤
+					/*oTxt3.value=oTxt2.value.replace(re2,'');*/
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<textarea id="txt1" rows="20" cols="30"></textarea><br />
+		<input id="btn1" type="button" value="过滤html标签"/><br />
+		<textarea id="txt2" rows="20" cols="30"></textarea><br />
+		<textarea id="txt3" rows="20" cols="30"></textarea>
+	</body>
+</html>
